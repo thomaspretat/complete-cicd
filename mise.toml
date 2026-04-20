@@ -1,0 +1,17 @@
+[tools]
+pre-commit = "latest"
+python = "3.13"
+uv = "latest"
+
+[settings]
+python.uv_venv_auto = true
+idiomatic_version_file_enable_tools = ["python"]
+experimental = true
+paranoid = false
+
+[env]
+APP_REPO = 'complete-cicd'
+GITOPS_REPO = 'complete-cicd-gitops'
+
+[hooks]
+enter = "bash ./scripts/setup_project"
