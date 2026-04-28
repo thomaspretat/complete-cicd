@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.0](https://github.com/thomaspretat/complete-cicd/compare/backend-v0.1.0...backend-v0.2.0) (2026-04-28)
+
+
+### Features
+
+* **backend/frontend:** added container image building/pushing ([#7](https://github.com/thomaspretat/complete-cicd/issues/7)) ([83aa214](https://github.com/thomaspretat/complete-cicd/commit/83aa21448ccff591c30ebc7574b8934ddcc45aad))
+
 ## 0.1.0 (2026-04-28)
 
 
