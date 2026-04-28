@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.3.0](https://github.com/thomaspretat/complete-cicd/compare/backend-v0.2.0...backend-v0.3.0) (2026-04-28)
+
+
+### Features
+
+* **backend:** trigger pipeline ([#11](https://github.com/thomaspretat/complete-cicd/issues/11)) ([b14d2c8](https://github.com/thomaspretat/complete-cicd/commit/b14d2c8a5dfdc4340b349b16fb396937b5280be5))
+
 ## [0.2.0](https://github.com/thomaspretat/complete-cicd/compare/backend-v0.1.0...backend-v0.2.0) (2026-04-28)
 
 
