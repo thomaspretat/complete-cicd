@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.3.0](https://github.com/thomaspretat/complete-cicd/compare/frontend-v0.2.0...frontend-v0.3.0) (2026-04-28)
+
+
+### Features
+
+* **frontend:** trigger frontend pipeline ([#13](https://github.com/thomaspretat/complete-cicd/issues/13)) ([b12cb2c](https://github.com/thomaspretat/complete-cicd/commit/b12cb2c323ee8e2344871c886ced79f51624b231))
+
 ## [0.2.0](https://github.com/thomaspretat/complete-cicd/compare/frontend-v0.1.0...frontend-v0.2.0) (2026-04-28)
 
 
