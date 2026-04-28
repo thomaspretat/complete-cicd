@@ -19,3 +19,11 @@ packages = ["src/frontend"]
 [build-system]
 requires = ["hatchling"]
 build-backend = "hatchling.build"
+
+[dependency-groups]
+dev = [
+    "pytest>=9.0.3",
+    "pytest-cov>=7.1.0",
+    "responses>=0.26.0",
+    "ruff>=0.15.12",
+]
