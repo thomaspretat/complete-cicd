@@ -78,7 +78,7 @@ jobs:
         run: docker build -t backend-app:latest .
 
       - name: Run Trivy vulnerability scanner
-        uses: aquasecurity/trivy-action@0.36.0
+        uses: aquasecurity/trivy-action@76071ef0d7c4ef6b431f1bb5f40cd0b0da2e3795
         with:
           image-ref: "backend-app:latest"
           format: "table"
