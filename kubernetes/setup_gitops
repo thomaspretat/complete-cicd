@@ -1,0 +1,36 @@
+#!/bin/bash
+
+# Exit immediately if a command exits with a non-zero status
+set -e
+
+# Resolve workspace and git user with fallbacks:
+#   DevPod     → DEVPOD_WORKSPACE_ID / GITUSER
+#   Codespaces → CODESPACE_NAME / GITHUB_USER
+#   Local      → current dir name / `gh api user`
+WORKSPACE_ID="${DEVPOD_WORKSPACE_ID:-${CODESPACE_NAME:-$(basename "$PWD")}}"
+GITUSER="${GITUSER:-${GITHUB_USER:-$(gh api user -q .login 2>/dev/null || true)}}"
+
+if [ -z "$GITOPS_REPO" ]; then
+  echo "Error: GITOPS_REPO is not set (expected in mise.toml [env])."
+  exit 1
+fi
+
+if [ -z "$GITUSER" ]; then
+  echo "Error: could not resolve GITUSER."
+  echo "Set GITUSER manually, or run 'gh auth login' so it can be auto-detected."
+  exit 1
+fi
+
+KEY_DIR="/workspaces/$WORKSPACE_ID/dev-keys"
+
+# Check if key exists
+if [ ! -f "$KEY_DIR/study_app_gitops_deploy_key" ]; then
+  echo "Error: Deploy key not found at $KEY_DIR/study_app_gitops_deploy_key"
+  exit 1
+fi
+
+flux bootstrap git \
+  --url=ssh://git@github.com/"$GITUSER"/"$GITOPS_REPO" \
+  --branch=main \
+  --private-key-file="$KEY_DIR"/study_app_gitops_deploy_key \
+  --path=clusters/dev
